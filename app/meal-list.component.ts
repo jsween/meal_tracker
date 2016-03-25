@@ -1,12 +1,13 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { MealComponent } from './meal.component';
+import { NewMealComponent } from './new-meal.component';
 import { Meal } from './meal.model';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
-  directives: [MealComponent],
+  directives: [MealComponent, NewMealComponent],
   templateUrl: 'app/meal-list.component.html'
 })
 export class MealListComponent {
