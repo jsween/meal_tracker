@@ -1,16 +1,14 @@
-# _Project Title_
+# _JS Week 2 Code Review_
 
-#### _A simple template, 3.__.2016_
+#### _An Angular 2 web application, 3.25.2016_
 
-### By _**Jon Sweeney and **_
+### By _**Jon Sweeney **_
 
 ## Description
 
-_This web app is designed to ._
+_This web app is designed to allow a user to log the food that they have eaten for the day.  The web app will store the meal names, details and calories.  The user can view the healthy and unhealthy meals by filtering the meals._
 
-_The goal of this project is to ._
-
-_The project was put together using ._
+_The project was put together using Angular 2, NPM, Gulp and Bower._
 
 
 ## Setup/Installation
@@ -19,6 +17,7 @@ _The project was put together using ._
 
 1. [Node.js](https://nodejs.org/en/) w/ [npm](https://www.npmjs.com/)
 2. [Bower](http://bower.io/)
+3. [Angular2](https://www.npmjs.com/package/angular2)
 
 #### Installation
 
@@ -35,7 +34,9 @@ _The project was put together using ._
 
 ## Known Bugs
 
-_This application is not fully designed and may have unknown bugs._
+_This application is not fully designed and may have unknown bugs. Known bugs to be fixed are:_
+
+1. [ ] Unable to handle negative numbers entered.
 
 _The current gulpfile.js does not handle creation of a production version of the build (with minified js). Front-end dependencies will still be minified._
 

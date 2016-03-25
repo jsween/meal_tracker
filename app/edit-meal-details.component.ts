@@ -11,9 +11,9 @@ import {Meal} from './meal.model';
     <h4>{{ meal.calories }} calories</h4>
     <hr>
     <h5>Edit This Meal:</h5>
-    <input type="text" class="col-sm-5 input-lg" placeholder="Meal Name" #editName/>
-    <input type="text" class="col-sm-5 input-lg" placeholder="Meal Details" #editDetails/>
-    <input type="number" class="col-sm-3 input-lg" placeholder="Calories" #editCalories/>
+    <input value="{{meal.name}}" type="text" class="col-sm-10 input-lg" placeholder="Meal Name" #editName/><br>
+    <input value="{{meal.details}}" type="text" class="col-sm-10 input-lg" #editDetails/>
+    <input value="{{meal.calories}}" type="number" class="col-sm-3 input-lg" #editCalories/>
     <button (click)="editMeal(editName, editDetails, editCalories)" class="btn-lg btn-success add-button">Edit Meal</button>
   </div>
   `
