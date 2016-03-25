@@ -6,7 +6,8 @@ import {Meal} from './meal.model';
   inputs: ['meal'],
   template: `
   <div class="meal-form">
-    <h4>{{ meal.name }}</h4>
+    <h4>Entered Meal: {{ meal.name }}</h4>
+    <h5>Details: {{ meal.details }}</h5>
     <h5>Edit Calories: {{ meal.calories }}</h5>
     <input type="number" value="{{meal.calories}}" class="col-sm-2 input-lg" #editCalories/>
     <button (click)="editMeal(editCalories)" class="btn-lg btn success add-button">Edit</button>
