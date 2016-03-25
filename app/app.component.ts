@@ -1,6 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { MealListComponent } from './meal-list.component';
 import { Meal } from './meal.model';
+import { HealthyRatingPipe } from './calories.pipe';
 
 @Component({
   selector: 'my-app',

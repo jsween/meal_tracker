@@ -1,4 +1,10 @@
-<meal-display *ngFor="#currentMeal of mealList"
+<label>Healthy Rating:</label>
+<select (change)="onChange($event.target.value)">
+  <option value="all" selected>All</option>
+  <option value="healthy">Healthy</option>
+  <option value="unhealthy">Unhealthy</option>
+</select>
+<meal-display *ngFor="#currentMeal of mealList | healthyRating:filter"
   (click)="mealClicked(currentMeal)"
   [class.selected]="currentMeal === selectedMeal"
   [meal]="currentMeal">
