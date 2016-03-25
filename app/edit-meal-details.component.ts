@@ -6,11 +6,15 @@ import {Meal} from './meal.model';
   inputs: ['meal'],
   template: `
   <div class="meal-form">
-    <h4>Entered Meal: {{ meal.name }}</h4>
-    <h5>Details: {{ meal.details }}</h5>
-    <h5>Edit Calories: {{ meal.calories }}</h5>
-    <input type="number" value="{{meal.calories}}" class="col-sm-2 input-lg" #editCalories/>
-    <button (click)="editMeal(editCalories)" class="btn-lg btn success add-button">Edit</button>
+    <h3>{{ meal.name }}</h3>
+    <h4>{{ meal.details }}</h4>
+    <h4>{{ meal.calories }} calories</h4>
+    <hr>
+    <h5>Edit Meal:</h5>
+    <input type="text" class="col-sm-5 input-lg" placeholder="Meal Name" #editName/>
+    <input type="text" class="col-sm-5 input-lg" placeholder="Meal Details" #editDetails/>
+    <input type="number" class="col-sm-3 input-lg" placeholder="Calories" #editCalories/>
+    <button (click)="editMeal(editName, editDetails, editCalories)" class="btn-lg btn-success add-button">Edit Meal</button>
   </div>
   `
 })
@@ -20,7 +24,9 @@ export class EditMealDetailsComponent {
   constructor(){
     this.onEditMeal = new EventEmitter;
   }
-  editMeal(editCalories: HTMLInputElement) {
+  editMeal(editName: HTMLInputElement, editDetails: HTMLInputElement, editCalories: HTMLInputElement) {
+    this.meal.name = editName.value;
+    this.meal.details = editDetails.value;
     this.meal.calories = editCalories.valueAsNumber;
     this.onEditMeal.emit(this.meal);
   }

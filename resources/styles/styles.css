@@ -1,9 +1,17 @@
-h1 {
-  color: blue;
-}
-
 body {
   background-color: #D1C488;
+}
+
+hr {
+  border: 1px solid #066158;
+}
+
+input {
+  display: block;
+}
+
+.meal-form {
+  margin-top: 50px;
 }
 
 .center {
@@ -11,7 +19,10 @@ body {
 }
 
 .selected {
-  color: #22bdf0;
+  padding: 5px 0;
+  display: block;
+  color: #823B09;
+  background-color: #D1C488;
 }
 
 .jumbotron {
