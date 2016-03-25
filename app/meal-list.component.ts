@@ -2,6 +2,7 @@ import { Component, EventEmitter } from 'angular2/core';
 import { MealComponent } from './meal.component';
 import { NewMealComponent } from './new-meal.component';
 import { Meal } from './meal.model';
+// import { MealShowDetailsComponent } from './meal-show-details.component';
 
 @Component({
   selector: 'meal-list',
@@ -24,8 +25,5 @@ export class MealListComponent {
   }
   createMeal(newMeal): void {
     this.mealList.push(newMeal);
-  }
-  toggleDetails(meal: Meal, state: boolean) {
-    meal.display_details = state;
   }
 }

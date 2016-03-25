@@ -1,0 +1,10 @@
+meal.component
+
+<input *ngIf="!Meal" type="checkbox" (click)="toggleDetails(Meal, true)"/>
+<input *ngIf="Meal" type="checkbox" checked (click)="toggleDetails(Meal, false)"/>
+
+meal-list.component
+
+toggleDetails(meal: Meal, state: boolean) {
+  meal.display_details = state;
+}
