@@ -9,7 +9,7 @@
       <option value="healthy">Healthy</option>
       <option value="unhealthy">Unhealthy</option>
     </select>
-    <meal-display *ngFor="#currentMeal of mealList | healthyRating:filter"
+    <meal-display class="meals" *ngFor="#currentMeal of mealList | healthyRating:filter"
       (click)="mealClicked(currentMeal)"
       [class.selected]="currentMeal === selectedMeal"
       [meal]="currentMeal">

@@ -10,7 +10,7 @@ import {Meal} from './meal.model';
     <h4>{{ meal.details }}</h4>
     <h4>{{ meal.calories }} calories</h4>
     <hr>
-    <h5>Edit Meal:</h5>
+    <h5>Edit This Meal:</h5>
     <input type="text" class="col-sm-5 input-lg" placeholder="Meal Name" #editName/>
     <input type="text" class="col-sm-5 input-lg" placeholder="Meal Details" #editDetails/>
     <input type="number" class="col-sm-3 input-lg" placeholder="Calories" #editCalories/>

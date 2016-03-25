@@ -63,3 +63,8 @@ input {
 .green {
   color: #1A786F;
 }
+
+.meals:hover {
+  color: #066158;
+  cursor: pointer;
+}
