@@ -1,3 +1,7 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 body {
   background-color: #D1C488;
 }
@@ -29,7 +33,12 @@ input {
   background-color: #1A786F;
   border-bottom: 15px solid #066158;
   color: #823B09;
-  text-shadow: 2px 2px #066158;
+  text-shadow: 5px 3px #066158;
+}
+
+.jumbotron h1 {
+  font-weight: bold;
+  font-size: 6.3em;
 }
 
 .content {
@@ -43,4 +52,14 @@ input {
 
 .btn-success {
   margin: 10px 0 0 90px ;
+  background-color: #1A786F;
+  border: 1px solid #066158;
+}
+
+.btn-success:hover {
+  background-color: #066158;
+}
+
+.green {
+  color: #1A786F;
 }
