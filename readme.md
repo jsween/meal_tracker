@@ -20,16 +20,19 @@ _The project was put together using Angular 2, NPM, Gulp and Bower._
 3. [Angular2](https://www.npmjs.com/package/angular2)
 
 #### Installation
+* [Click Here](https://github.com/jsween/meal_tracker.git)To clone Repo
 
-* After cloning the repo, you will need to install dependencies...
+* After cloning the repo, you will need to install dependencies in terminal by entering the following commands:
 
-
+    npm init
     npm install
+    npm install gulp -g
+    npm install bower -g
+    bower init
     bower install
-
-* Gulp is used to handle both building the site and launching a server to host the site...
-
-
+    bower install bootstrap --save
+    gulp bower
+    gulp build
     gulp serve
 
 ## Known Bugs
@@ -42,8 +45,8 @@ _The current gulpfile.js does not handle creation of a production version of the
 
 ## To Do (coming in future versions)
 
-1. [ ] No crash at errors during watch. Will log errors but not attempt a rebuild.
-2. [ ] Folder for organizing html files, gulp will build fresh html in the build folder.
+1. [ ] Add average calories.
+2. [ ] Add an api for date.
 
 ## Support and contact details
 
@@ -51,7 +54,7 @@ _If you have any questions, concerns, or feedback, please contact the authors th
 
 ## Technologies Used
 
-* _This project was built on [Node.js](https://nodejs.org/en/)._
+* _This project was built with [Angular 2](https://angular.io/)._
 * _Dependencies were handled with [npm](https://www.npmjs.com/) and [Bower](http://bower.io/)._
 * _[Gulp](http://gulpjs.com/) is an awesome asset pipeline used in this project._
 
