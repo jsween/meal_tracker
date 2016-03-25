@@ -10,3 +10,5 @@
   [meal]="currentMeal">
 </meal-display>
 <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
+<edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal" (onEditMeal)="refreshMeal($event)">
+</edit-meal-details>

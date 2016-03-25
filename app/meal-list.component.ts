@@ -4,13 +4,14 @@ import { NewMealComponent } from './new-meal.component';
 import { Meal } from './meal.model';
 // import { MealShowDetailsComponent } from './meal-show-details.component';
 import { HealthyRatingPipe } from './calories.pipe';
+import { EditMealDetailsComponent } from './edit-meal-details.component';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   pipes: [ HealthyRatingPipe ],
-  directives: [MealComponent, NewMealComponent],
+  directives: [MealComponent, NewMealComponent, EditMealDetailsComponent],
   templateUrl: 'app/meal-list.component.html'
 })
 export class MealListComponent {
@@ -32,5 +33,12 @@ export class MealListComponent {
   onChange(option) {
     this.filter = option;
     console.log(this.filter);
+  }
+  refreshMeal(newMeal: Meal) {
+    for(var meal of this.mealList) {
+      if(meal.name === newMeal.name) {
+        meal.calories = newMeal.calories;
+      }
+    }
   }
 }
