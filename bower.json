@@ -1,10 +1,10 @@
 {
-  "name": "angular2-skeleton-app",
-  "description": "",
+  "name": "meal-tracker-app",
+  "description": "angular",
   "main": "index.js",
-  "license": "ISC",
+  "license": "MIT",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/jsween/meal_tracker.git",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,5 +14,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6"
-  }
+  },
+  "authors": [
+    "Jon <jonsweeney26@gmail.com>"
+  ]
 }
