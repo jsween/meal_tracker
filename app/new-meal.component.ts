@@ -3,9 +3,14 @@ import {Meal} from './meal.model';
 
 @Component({
   selector: 'new-meal',
-  outputs: ['newMeal'],
+  outputs: ['onSubmitNewMeal'],
   template: `
-    <h4>Blank Template</h4>
+    <div>
+      <input type="text" placeholder="Food" #newName>
+      <input type="text" placeholder="Details" #newDetails>
+      <input type="number" placeholder="Calories" #newCalories>
+      <button (click)="addNewEntry(newName, newDetails, newCalories)" type="button">Enter a Meal</button>
+    </div>
   `
 })
 export class NewMealComponent {
