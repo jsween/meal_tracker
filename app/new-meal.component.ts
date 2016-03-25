@@ -6,10 +6,10 @@ import {Meal} from './meal.model';
   outputs: ['onSubmitNewMeal'],
   template: `
     <div>
-      <input type="text" placeholder="Food" #newName>
+      <input type="text" placeholder="Food Name" #newName>
       <input type="text" placeholder="Details" #newDetails>
-      <input type="number" placeholder="Calories" #newCalories>
-      <button (click)="addNewEntry(newName, newDetails, newCalories)" type="button">Enter a Meal</button>
+      <input type="number" placeholder="Number of Calories" #newCalories>
+      <button (click)="addNewMeal(newName, newDetails, newCalories)" type="button">Enter a Meal</button>
     </div>
   `
 })
@@ -18,7 +18,12 @@ export class NewMealComponent {
   constructor(){
     this.onSubmitNewMeal = new EventEmitter();
   }
-  addNewMeal() {
-    console.log("creating food...");
+  addNewMeal(newName: HTMLInputElement, newDetails: HTMLInputElement, newCalories: HTMLInputElement) {
+    var newMeal = new Meal(newName.value, newDetails.value, parseInt(newCalories.value), 0);
+    console.log(newMeal);
+    this.onSubmitNewMeal.emit(newMeal);
+    newName.value = "";
+    newDetails.value = "";
+    newCalories.value = "";
   }
 }
