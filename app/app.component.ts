@@ -1,17 +1,22 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter } from 'angular2/core';
 
 @Component({
   selector: 'meal-list',
-  inputs: ['meal-list'],
+  inputs: ['mealList'],
+  outputs: ['onMealSelect'],
   template: `
-  <h4 *ngFor="#meal of meals" (click)="mealWasSelected(meal)">
-    {{meal.name}}
+  <h4 *ngFor="#currentMeal of mealList" (click)="mealClicked(currentMeal)">
+    {{currentMeal.name}}
   </h4>
   `
 })
 
 export class MealListComponent {
   public mealList: Meal[];
+  public onMealSelect: EventEmitter<Meal>;
+  constructor() {
+    this.onMealSelect = new EventEmitter();
+  }
   mealClicked(clickedMeal: Meal): void {
     console.log(clickedMeal);
   }
@@ -19,13 +24,14 @@ export class MealListComponent {
 
 @Component({
   selector: 'my-app',
+  directives: [MealListComponent],
   template: `
   <div class= "jumbotron center">
     <h1>Fatboy LoseIt App</h1>
   </div>
     <div class="container">
       <h2>Your Meals</h2>
-
+      <meal-list [mealList]="meals"></meal-list>
     </div>
   `
 })
