@@ -23,7 +23,14 @@ import { HealthyRatingPipe } from './calories.pipe';
 export class AppComponent {
   public meals: Meal[];
   constructor() {
-    this.meals = [];
+    this.meals = [
+      new Meal("test1", "test2", 299),
+      new Meal("test1", "test2", 300),
+      new Meal("test1", "test2", 200),
+      new Meal("test1", "test2", 500),
+      new Meal("test1", "test2", 456),
+      new Meal("test1", "test2", 800)
+    ];
   }
   mealWasSelected(clickedMeal: Meal): void {
     console.log('parent', clickedMeal);
