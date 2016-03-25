@@ -7,13 +7,7 @@ import { Meal } from './meal.model';
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   directives: [MealComponent],
-  template: `
-  <meal-display *ngFor="#currentMeal of mealList"
-    (click)="mealClicked(currentMeal)"
-    [class.selected]="currentMeal === selectedMeal"
-    [meal]="currentMeal">
-  </meal-display>
-  `
+  templateUrl: 'app/meal-list.component.html'
 })
 export class MealListComponent {
   public mealList: Meal[];
