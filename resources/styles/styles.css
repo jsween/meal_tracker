@@ -2,10 +2,26 @@ h1 {
   color: blue;
 }
 
+body {
+  background-color: #D1C488;
+}
+
 .center {
   text-align: center;
 }
 
 .selected {
   color: #22bdf0;
+}
+
+.jumbotron {
+  background-color: #1A786F;
+  border-bottom: 15px solid #066158;
+  color: #823B09;
+  text-shadow: 2px 2px #066158;
+}
+
+.content {
+  padding: 20px 15px 400px;
+  background-color: #EDE1A8;
 }

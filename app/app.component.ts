@@ -7,10 +7,10 @@ import { HealthyRatingPipe } from './calories.pipe';
   selector: 'my-app',
   directives: [MealListComponent],
   template: `
-  <div class= "center">
+  <div class= "jumbotron center">
     <h1>Fatboy LoseIt App</h1>
   </div>
-    <div class="container">
+    <div class="container content">
       <h2>Your Meals</h2>
       <meal-list
         [mealList]="meals"
