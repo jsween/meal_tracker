@@ -11,7 +11,7 @@ import { HealthyRatingPipe } from './calories.pipe';
     <h1>Fatboy LoseIt App</h1>
   </div>
     <div class="container content">
-      <h2>Your Meals</h2>
+      <h2>Today's Meals</h2>
       <meal-list
         [mealList]="meals"
         (onMealSelect)="mealWasSelected($event)">
@@ -34,6 +34,5 @@ export class AppComponent {
   }
   mealWasSelected(clickedMeal: Meal): void {
     console.log('parent', clickedMeal);
-
   }
 }
