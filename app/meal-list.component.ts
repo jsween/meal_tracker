@@ -11,7 +11,7 @@ import { Meal } from './meal.model';
   templateUrl: 'app/meal-list.component.html'
 })
 export class MealListComponent {
-  public mealList: Meal[];
+  public mealList: Meal[] = [];
   public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
   constructor() {
@@ -22,10 +22,7 @@ export class MealListComponent {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
-  createMeal(name: string, details: string, calories: number): void {
-    console.log(name + " " + details + " " + calories);
-    this.mealList.push(
-      new Meal(name, details, calories, this.mealList.length)
-    );
+  createMeal(newMeal): void {
+    this.mealList.push(newMeal);
   }
 }
