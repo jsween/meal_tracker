@@ -25,4 +25,7 @@ export class MealListComponent {
   createMeal(newMeal): void {
     this.mealList.push(newMeal);
   }
+  toggleDetails(meal: Meal, state: boolean) {
+    meal.display_details = state;
+  }
 }
