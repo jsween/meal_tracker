@@ -10,7 +10,6 @@ import { Component, EventEmitter } from 'angular2/core';
   </h4>
   `
 })
-
 export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>;
@@ -18,7 +17,8 @@ export class MealListComponent {
     this.onMealSelect = new EventEmitter();
   }
   mealClicked(clickedMeal: Meal): void {
-    console.log(clickedMeal);
+    console.log('child', clickedMeal);
+    this.onMealSelect.emit(clickedMeal);
   }
 }
 
@@ -31,7 +31,10 @@ export class MealListComponent {
   </div>
     <div class="container">
       <h2>Your Meals</h2>
-      <meal-list [mealList]="meals"></meal-list>
+      <meal-list
+        [mealList]="meals"
+        (onMealSelect)="mealWasSelected($event)">
+      </meal-list>
     </div>
   `
 })
@@ -48,7 +51,7 @@ export class AppComponent {
     ];
   }
   mealWasSelected(clickedMeal: Meal): void {
-    alert(clickedMeal.name + " " + clickedMeal.calories + " calories");
+    console.log('parent', clickedMeal);
   }
 }
 
