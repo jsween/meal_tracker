@@ -22,4 +22,10 @@ export class MealListComponent {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
+  createMeal(name: string, details: string, calories: number): void {
+    console.log(name + " " + details + " " + calories);
+    this.mealList.push(
+      new Meal(name, details, calories, this.mealList.length)
+    );
+  }
 }
