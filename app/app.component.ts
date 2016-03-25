@@ -1,23 +1,39 @@
 import { Component, EventEmitter } from 'angular2/core';
 
 @Component({
+  selector: 'meal-display',
+  inputs: ['meal'],
+  template: `
+    <h4>
+      {{currentMeal.name}}
+    </h4>
+  `
+})
+export class MealComponent {
+  public meal: Meal;
+}
+
+@Component({
   selector: 'meal-list',
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   template: `
-  <h4 *ngFor="#currentMeal of mealList" (click)="mealClicked(currentMeal)">
-    {{currentMeal.name}}
+  <h4 *ngFor="#currentMeal of mealList"
+  (click)="mealClicked(currentMeal)"
+  [class.selected]="currentMeal === selectedMeal">
   </h4>
   `
 })
 export class MealListComponent {
   public mealList: Meal[];
   public onMealSelect: EventEmitter<Meal>;
+  public selectedMeal: Meal;
   constructor() {
     this.onMealSelect = new EventEmitter();
   }
   mealClicked(clickedMeal: Meal): void {
     console.log('child', clickedMeal);
+    this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
 }
@@ -26,7 +42,7 @@ export class MealListComponent {
   selector: 'my-app',
   directives: [MealListComponent],
   template: `
-  <div class= "jumbotron center">
+  <div class= "center">
     <h1>Fatboy LoseIt App</h1>
   </div>
     <div class="container">

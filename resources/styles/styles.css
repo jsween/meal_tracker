@@ -5,3 +5,7 @@ h1 {
 .center {
   text-align: center;
 }
+
+.selected {
+  color: #22bdf0;
+}
